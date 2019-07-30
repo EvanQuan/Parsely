@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsely", "Parsely\Parsely.csproj", "{0D6731B1-DAFD-49CD-9851-9DAB69CE243D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsely.UnitTests", "Parsely.UnitTests\Parsely.UnitTests.csproj", "{0F0BC7F6-6C77-4A34-9448-4794578843AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D6731B1-DAFD-49CD-9851-9DAB69CE243D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6731B1-DAFD-49CD-9851-9DAB69CE243D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6731B1-DAFD-49CD-9851-9DAB69CE243D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6731B1-DAFD-49CD-9851-9DAB69CE243D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0BC7F6-6C77-4A34-9448-4794578843AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0BC7F6-6C77-4A34-9448-4794578843AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0BC7F6-6C77-4A34-9448-4794578843AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0BC7F6-6C77-4A34-9448-4794578843AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA7FE58F-C1DA-41F0-83DC-B6F454ED25F6}
+	EndGlobalSection
+EndGlobal
