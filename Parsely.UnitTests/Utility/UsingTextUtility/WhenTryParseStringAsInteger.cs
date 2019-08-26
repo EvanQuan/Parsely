@@ -43,6 +43,8 @@ namespace Parsely.UnitTests.Utilitiy.UsingTextUtility
         [InlineData("")]
         [InlineData(" ")]
         [InlineData("@")]
+        [InlineData("9999999999")]
+        [InlineData("-9999999999")]
         public void ShouldNotTryParseAsInteger(string toCheck)
         {
             bool isInteger = Utility.TryParseAsInteger(toCheck, out int actualResult);

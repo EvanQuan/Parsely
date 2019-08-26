@@ -20,6 +20,8 @@ namespace Parsely.UnitTests.Utility.UsingTextUtility
         [InlineData("0.1")]
         [InlineData("-0.1")]
         [InlineData("-0.9")]
+        [InlineData("-99999999999999999999999999999.9")]
+        [InlineData("99999999999999999999999999999.9")]
         public void ShouldNotValidateInteger(string toCheck)
         {
             Assert.False(Utility.IsInteger(toCheck));
