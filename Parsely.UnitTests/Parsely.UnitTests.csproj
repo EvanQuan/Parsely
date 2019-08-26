@@ -16,4 +16,8 @@
     <Folder Include="Parsing\UsingVerbGnosticParser\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Parsely\Parsely.csproj" />
+  </ItemGroup>
+
 </Project>
