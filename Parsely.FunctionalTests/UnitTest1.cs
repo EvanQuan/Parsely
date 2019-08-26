@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Parsely.UnitTests
+namespace Parsely.FunctionalTests
 {
     public class UnitTest1
     {
