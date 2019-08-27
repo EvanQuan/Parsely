@@ -1,8 +1,5 @@
 ﻿using Parsely.Utility;
 using Parsely.Utility.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Parsely.UnitTests.Utilitiy.UsingTextUtility
 {

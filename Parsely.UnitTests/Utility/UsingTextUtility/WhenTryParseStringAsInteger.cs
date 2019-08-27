@@ -1,7 +1,4 @@
-﻿using Parsely.Utility;
-using Parsely.Utility.Implementations;
-using System;
-using Xunit;
+﻿using Xunit;
 
 namespace Parsely.UnitTests.Utilitiy.UsingTextUtility
 {
@@ -26,8 +23,8 @@ namespace Parsely.UnitTests.Utilitiy.UsingTextUtility
         [InlineData(-1.0f, -1)]
         [InlineData(0.0f, 0)]
         [InlineData(1.0f, 1)]
-        [InlineData((float)int.MaxValue, int.MaxValue)]
-        [InlineData((float)int.MinValue, int.MinValue)]
+        [InlineData(int.MaxValue, int.MaxValue)]
+        [InlineData(int.MinValue, int.MinValue)]
         public void ShouldTryParseFloatAsInteger(float toCheck, int expectedResult)
         {
             bool isInteger = Utility.TryParseAsInteger(toCheck, out int actualResult);
