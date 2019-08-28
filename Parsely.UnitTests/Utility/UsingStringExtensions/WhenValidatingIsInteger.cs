@@ -1,17 +1,24 @@
-﻿using Parsely.UnitTests.Utilitiy.UsingTextUtility;
+﻿using Parsely.Utility.Extensions;
 using Xunit;
 
-namespace Parsely.UnitTests.Utility.UsingTextUtility
+namespace Parsely.UnitTests.Utility.UsingStringExtensions
 {
-    public class WhenValidatingStringAsInteger : TextUtilityTestBase
+    public class WhenValidatingIsInteger
     {
         [Theory]
+        [InlineData("1")]
+        [InlineData("0")]
+        [InlineData("-1")]
         [InlineData("1.0")]
         [InlineData("0.0")]
         [InlineData("-1.0")]
+        [InlineData("99999999999999999999999999999999999")]
+        [InlineData("-99999999999999999999999999999999999")]
+        [InlineData("99999999999999999999999999999999999.0")]
+        [InlineData("-99999999999999999999999999999999999.0")]
         public void ShouldValidateAsInteger(string toCheck)
         {
-            Assert.True(Utility.IsInteger(toCheck));
+            Assert.True(toCheck.IsInteger());
         }
 
         [Theory]
@@ -24,7 +31,7 @@ namespace Parsely.UnitTests.Utility.UsingTextUtility
         [InlineData("99999999999999999999999999999.9")]
         public void ShouldNotValidateInteger(string toCheck)
         {
-            Assert.False(Utility.IsInteger(toCheck));
+            Assert.False(toCheck.IsInteger());
         }
     }
 }
