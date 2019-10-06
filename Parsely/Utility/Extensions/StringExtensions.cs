@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace Parsely.Utility.Extensions
 {
     /// <summary>
-    /// <see cref="string"/> extensions.
+    /// <see cref="String"/> extensions.
     /// </summary>
     public static class StringExtensions
     {
+        public static String RemoveDecimalPoints(this String self)
+        {
+            Int32 decimalIndex = self.IndexOf('.');
+            return decimalIndex == -1 ? self : self.Remove(decimalIndex);
+        }
+
+        public static Boolean IsMatch(this String self, in String pattern)
+            => Regex.IsMatch(self, pattern);
+
         /// <summary>
         /// Check if this string is in the form of an integer, or a form that
         /// can be expressed as an integer.
@@ -15,18 +25,8 @@ namespace Parsely.Utility.Extensions
         /// <param name="self"></param>
         /// <returns>true if in the form that can be expressed as an integer,
         /// else false</returns>
-        public static bool IsInteger(this string self)
-        {
-            try
-            {
-                self.ToInteger();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        public static Boolean IsInteger(this String self)
+            => self.IsMatch(RegularExpressions.Integer);
 
         /// <summary>
         /// Converts the <see cref="string"/> representation of a number to its
@@ -36,10 +36,13 @@ namespace Parsely.Utility.Extensions
         /// <exception cref="FormatException">If the string is not in the form
         /// of an integer</exception>
         /// <returns></returns>
-        public static BigInteger ToInteger(this string self)
+        public static BigInteger ToInteger(this String self)
         {
-
-            return BigInteger.Parse(self);
+            if (self.IsInteger())
+            {
+                return BigInteger.Parse(self.RemoveDecimalPoints());
+            }
+            throw new FormatException($"{self} is not an integer.");
         }
 
         /// <summary>
@@ -49,11 +52,11 @@ namespace Parsely.Utility.Extensions
         /// <param name="result">Parsed integer if successful, else 0
         /// <returns>true if the specified string can be parsed as an integer,
         /// else false</returns>
-        public static bool TryParseAsInteger(this string self, out long integer)
+        public static Boolean TryParseAsInteger(this String self, out Int64 integer)
         {
             integer = 0;
-            return float.TryParse(self, out float result) ?
-                long.TryParse(result.ToString(), out integer) : false;
+            return Single.TryParse(self, out Single result) ?
+                Int64.TryParse(result.ToString(), out integer) : false;
         }
     }
 }
