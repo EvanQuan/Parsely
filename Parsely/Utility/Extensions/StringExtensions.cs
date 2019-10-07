@@ -29,7 +29,7 @@ namespace Parsely.Utility.Extensions
             => self.IsMatch(RegularExpressions.Integer);
 
         /// <summary>
-        /// Converts the <see cref="string"/> representation of a number to its
+        /// Converts the <see cref="String"/> representation of a number to its
         /// <see cref="BigInteger"/> equivalent.
         /// </summary>
         /// <param name="self"></param>
@@ -46,10 +46,10 @@ namespace Parsely.Utility.Extensions
         }
 
         /// <summary>
-        /// Check if a <see cref="string"/> can be parsed as an integer.
+        /// Check if a <see cref="String"/> can be parsed as an integer.
         /// </summary>
-        /// <param name="toCheck">string to check</param>
-        /// <param name="result">Parsed integer if successful, else 0
+        /// <param name="self">string to check</param>
+        /// <param name="integer">Parsed integer if successful, else 0
         /// <returns>true if the specified string can be parsed as an integer,
         /// else false</returns>
         public static Boolean TryParseAsInteger(this String self, out Int64 integer)
